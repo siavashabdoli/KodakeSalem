@@ -12,6 +12,6 @@ import java.util.List;
 public interface FormPresenterInterface extends MvpPresenter<FormViewInterface>{
     public void FormSubmit();
     public void backPressed();
-    public void initData(int id);
+    public void initData(int formId,int childId);
 
 }

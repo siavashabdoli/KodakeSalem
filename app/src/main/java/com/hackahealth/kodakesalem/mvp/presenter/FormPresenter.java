@@ -1,6 +1,7 @@
 package com.hackahealth.kodakesalem.mvp.presenter;
 
 import com.hackahealth.kodakesalem.mvp.objects.FormItemObject;
+import com.hackahealth.kodakesalem.mvp.objects.ResponseResultFormObject;
 import com.hackahealth.kodakesalem.mvp.objects.ResultFormItemObject;
 import com.hackahealth.kodakesalem.mvp.presenter.PresenterInterface.FormPresenterInterface;
 import com.hackahealth.kodakesalem.mvp.ui.uiInterface.FormViewInterface;
@@ -25,6 +26,7 @@ public class FormPresenter extends MvpBasePresenter<FormViewInterface> implement
     private final static int formPerPage =10;
     private APIService mService;
     private int formId;
+    private int childId;
 
     @Override
     public void attachView(FormViewInterface view) {
@@ -61,7 +63,7 @@ public class FormPresenter extends MvpBasePresenter<FormViewInterface> implement
     }
 
     private void sendFormToApi() {
-
+    Call<ResponseResultFormObject> call=mService.sendProject(childId+"",formId+"",resultFormItemObjects);
     }
 
     private boolean isValid(List<ResultFormItemObject> resultFormItemObjects) {
@@ -74,15 +76,16 @@ public class FormPresenter extends MvpBasePresenter<FormViewInterface> implement
     }
 
     @Override
-    public void initData(int id) {
-        this.formId =id;
-        Call <List<FormItemObject> > call=mService.getFormById(id+"");
+    public void initData(int formId,int childId) {
+        this.formId =formId;
+        this.childId =childId;
+        Call <List<FormItemObject> > call=mService.getFormById(formId+"");
         call.enqueue(new Callback<List<FormItemObject>>() {
             @Override
             public void onResponse(Call<List<FormItemObject>> call, Response<List<FormItemObject>> response) {
                 if(response.isSuccess()){
                     int size= formPerPage>response.body().size()?formPerPage:response.body().size();
-                    getView().addViewForm(response.body().subList(0,size));
+                    getView().addViewForm(response.body().subList(0, size));
                 }
             }
 
