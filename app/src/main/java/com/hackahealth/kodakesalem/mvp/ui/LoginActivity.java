@@ -31,5 +31,8 @@ public class LoginActivity extends MvpActivity<LoginViewInterface, LoginPresente
     }
 
 
+    @Override
+    public void LoginSuccesfull() {
 
+    }
 }

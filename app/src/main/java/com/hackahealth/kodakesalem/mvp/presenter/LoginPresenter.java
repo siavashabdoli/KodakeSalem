@@ -23,7 +23,7 @@ public class LoginPresenter extends MvpBasePresenter<LoginViewInterface> impleme
 
     @Override
     public void login(String username, String password) {
-
+        getView().LoginSuccesfull();
     }
 
     public static boolean isEmailValid(String email) {
