@@ -27,22 +27,31 @@ public class FormPresenter extends MvpBasePresenter<FormViewInterface> implement
     private APIService mService;
     private int formId;
     private int childId;
+    private Call<ResponseResultFormObject> call;
 
+    public FormPresenter(){
+
+         ApiProvider provider= new ApiProvider();
+         mService=provider.getTService();
+     }
     @Override
     public void attachView(FormViewInterface view) {
         super.attachView(view);
-        ApiProvider provider= new ApiProvider();
-        mService=provider.getTService();
 
     }
 
     @Override
     public void detachView(boolean retainInstance) {
         super.detachView(retainInstance);
+        if(call!=null){
+            call.cancel();
+        }
+
     }
 
     @Override
     public void FormSubmit() {
+        if(getView().getData()!=null)
         resultFormItemObjects.addAll(getView().getData());
         getView().clearLastData();
 
@@ -63,7 +72,7 @@ public class FormPresenter extends MvpBasePresenter<FormViewInterface> implement
     }
 
     private void sendFormToApi() {
-    Call<ResponseResultFormObject> call=mService.sendProject(childId+"",formId+"",resultFormItemObjects);
+        call=mService.sendProject(childId+"",formId+"",resultFormItemObjects);
     }
 
     private boolean isValid(List<ResultFormItemObject> resultFormItemObjects) {

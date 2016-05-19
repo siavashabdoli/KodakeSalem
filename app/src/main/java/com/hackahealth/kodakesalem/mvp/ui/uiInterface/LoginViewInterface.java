@@ -7,4 +7,6 @@ import com.hannesdorfmann.mosby.mvp.MvpView;
  */
 public interface LoginViewInterface extends MvpView {
     public void LoginSuccesfull();
+
+    void LoginFailed();
 }

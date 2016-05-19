@@ -1,8 +1,10 @@
 package com.hackahealth.kodakesalem.network;
 
+import com.hackahealth.kodakesalem.mvp.objects.AuthenticationResponseObject;
 import com.hackahealth.kodakesalem.mvp.objects.FormItemObject;
 import com.hackahealth.kodakesalem.mvp.objects.ResponseResultFormObject;
 import com.hackahealth.kodakesalem.mvp.objects.ResultFormItemObject;
+import com.hackahealth.kodakesalem.mvp.objects.UserLoginObject;
 
 import java.util.List;
 
@@ -21,4 +23,8 @@ public interface APIService {
 
     @POST("checklist/child/{childId}/day/{dayId}")
     Call<ResponseResultFormObject> sendProject(@Path("childId") String childId,@Path("dayId") String CheckListId,@Body List<ResultFormItemObject> resultFormObjects);
+
+    @POST("authentication")
+    Call<AuthenticationResponseObject> loginUser(@Body UserLoginObject userLoginObject);
+
 }
