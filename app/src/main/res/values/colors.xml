@@ -8,4 +8,11 @@
     <color name="secondary_text">#727272</color>
     <color name="icons">#212121</color>
     <color name="divider">#B6B6B6</color>
+    <color name="background">#F2F2F2</color>
+
+
+    <!-- circle color-->
+    <color name="circle_green">#7CB342</color>
+    <color name="circle_blue">#039BE5</color>
+    <color name="circle_orange">#FDD835</color>
 </resources>

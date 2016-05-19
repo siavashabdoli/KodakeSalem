@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.util.Log;
 
+import com.google.gson.Gson;
 import com.hackahealth.kodakesalem.R;
 import com.hackahealth.kodakesalem.mvp.objects.AuthenticationResponseObject;
 import com.hackahealth.kodakesalem.mvp.objects.UserLoginObject;
@@ -35,8 +36,7 @@ public class LoginPresenter extends MvpBasePresenter<LoginViewInterface> impleme
 
     public LoginPresenter(Context context){
         this.context=context;
-        ApiProvider provider= new ApiProvider();
-        mService=provider.getTService();
+        mService=ApiProvider.getTService();
     }
     @Override
     public void attachView(LoginViewInterface view) {
@@ -56,7 +56,7 @@ public class LoginPresenter extends MvpBasePresenter<LoginViewInterface> impleme
     @Override
     public void login(String username, String password) {
         userLoginObject = new UserLoginObject(username, password);
-
+            Log.d("siavash",username+password);
             loginSend();
 
 
@@ -66,7 +66,9 @@ public class LoginPresenter extends MvpBasePresenter<LoginViewInterface> impleme
         call.enqueue(new Callback<AuthenticationResponseObject>() {
             @Override
             public void onResponse(Call<AuthenticationResponseObject> call, Response<AuthenticationResponseObject> response) {
-                if (response.isSuccess()) {
+
+
+                if (response.isSuccessful()) {
                     AppSharedPreference appSharedPreference = new AppSharedPreference(context);
                     appSharedPreference.saveUserAuthenticationInfo(response.body());
                     getView().LoginSuccessful();
@@ -77,7 +79,8 @@ public class LoginPresenter extends MvpBasePresenter<LoginViewInterface> impleme
 
             @Override
             public void onFailure(Call<AuthenticationResponseObject> call, Throwable t) {
-                Log.d("LoginPresenter","Unexpected Error: Retrofit failed to convert json");
+                Log.d("LoginPresenter", "Unexpected Error: Retrofit failed to convert json");
+
             }
         });
     }

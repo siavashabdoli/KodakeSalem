@@ -19,6 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".mvp.ui.LoginActivity"/>
+        <activity android:name=".mvp.ui.HomePageActivity"/>
     </application>
 
 </manifest>

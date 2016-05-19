@@ -1,6 +1,7 @@
 package com.hackahealth.kodakesalem.mvp.ui;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -20,6 +21,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import pub.devrel.easypermissions.EasyPermissions;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class LoginActivity extends MvpActivity<LoginViewInterface, LoginPresenterInterface> implements LoginViewInterface,EasyPermissions.PermissionCallbacks  {
 
@@ -48,11 +50,15 @@ public class LoginActivity extends MvpActivity<LoginViewInterface, LoginPresente
         ButterKnife.bind(this);
     }
 
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+    }
 
     @Override
     public void LoginSuccessful() {
         Toast.makeText(this, R.string.login_successful,Toast.LENGTH_LONG).show();
-        startActivity(new Intent(LoginActivity.this, SplashScreen.class));
+        startActivity(new Intent(LoginActivity.this, HomePageActivity.class));
         finish();
     }
 

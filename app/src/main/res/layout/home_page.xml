@@ -1,0 +1,125 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    tools:context=".NewChild"
+    android:background="@color/background">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="206dp"
+                android:orientation="horizontal"
+                android:background="@color/colorPrimary">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|left"
+                    android:layout_marginLeft="20dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/main_image"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="190dp"
+                    android:layout_gravity="right|center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/white"
+                        android:gravity="right"
+                        android:textSize="16sp"
+                        android:text="@string/ta_dabestan" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:textColor="@android:color/white"
+                        android:gravity="right"
+                        android:textSize="9sp"
+                        android:text="@string/subtitle_moraghebat_kodak" />
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/homepage_cardview_height"
+                android:background="@android:color/white"
+                android:layout_marginTop="@dimen/homepage_cardview_margintop"
+                android:layout_marginRight="@dimen/homepage_cardview_margin"
+                android:layout_marginLeft="@dimen/homepage_cardview_margin"
+                android:layout_marginBottom="@dimen/homepage_cardview_margin">
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="@dimen/homepage_circle_diameter"
+                        android:layout_height="@dimen/homepage_circle_diameter"
+                        style="@style/circle_homepage_style"
+
+                        android:src="@drawable/circle_image_green"/>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:layout_marginRight="18dp"
+                        android:src="@drawable/ic_person_add_white_36dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/home_page_name"
+                        android:gravity="right|center_vertical"
+                        android:layout_gravity="right|center_vertical"/>
+                </FrameLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/home_page_createnew"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/homepage_cardview_height"
+                android:background="@android:color/white"
+                android:layout_margin="@dimen/homepage_cardview_margin">
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+                android:id="@+id/home_page_revisit"
+            android:layout_height="@dimen/homepage_cardview_height"
+                android:background="@android:color/white"
+                android:layout_margin="@dimen/homepage_cardview_margin">
+
+        </android.support.v7.widget.CardView>
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

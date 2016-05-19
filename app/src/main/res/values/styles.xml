@@ -19,4 +19,9 @@
         <item name="colorAccent">@color/secondary_text</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="circle_homepage_style">
+        <item name="android:gravity">right|center_vertical</item>
+        <item name="android:layout_marginRight">@dimen/home_circle_right_margin</item>
+    </style>
 </resources>

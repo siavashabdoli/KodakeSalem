@@ -29,8 +29,8 @@ public class AppSharedPreference {
     public void saveUserAuthenticationInfo(AuthenticationResponseObject authModel) {
         mPreference.edit()
                 .putString(this.mContext.getString(R.string.app_pref_access_token), authModel.token)
-                .putString(this.mContext.getString(R.string.app_pref_user_id), authModel.userprofile.id+"")
-                .putString(this.mContext.getString(R.string.app_pref_user_name), authModel.userprofile.name)
+                .putString(this.mContext.getString(R.string.app_pref_user_id), authModel.userProfile.id+"")
+                .putString(this.mContext.getString(R.string.app_pref_user_name), authModel.userProfile.name)
                 .apply();
     }
 

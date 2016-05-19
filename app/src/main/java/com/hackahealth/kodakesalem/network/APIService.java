@@ -24,7 +24,7 @@ public interface APIService {
     @POST("checklist/child/{childId}/day/{dayId}")
     Call<ResponseResultFormObject> sendProject(@Path("childId") String childId,@Path("dayId") String CheckListId,@Body List<ResultFormItemObject> resultFormObjects);
 
-    @POST("authentication")
+    @POST("authentication/")
     Call<AuthenticationResponseObject> loginUser(@Body UserLoginObject userLoginObject);
 
 }

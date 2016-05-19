@@ -26,4 +26,6 @@
     <string name="day">روز</string>
     <string name="height_birth">قد هنگام تولد - سانتی متر</string>
     <string name="dore_sar_cm">دور سر هنگام تولد - سانتی متر</string>
+    <string name="ta_dabestan">تا دبستان</string>
+    <string name="subtitle_moraghebat_kodak">مراقب سلامت کودک تا ۷ سالگی</string>
 </resources>

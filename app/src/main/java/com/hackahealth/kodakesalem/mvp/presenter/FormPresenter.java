@@ -31,8 +31,7 @@ public class FormPresenter extends MvpBasePresenter<FormViewInterface> implement
 
     public FormPresenter(){
 
-         ApiProvider provider= new ApiProvider();
-         mService=provider.getTService();
+         mService=ApiProvider.getTService();
      }
     @Override
     public void attachView(FormViewInterface view) {
@@ -92,7 +91,7 @@ public class FormPresenter extends MvpBasePresenter<FormViewInterface> implement
         call.enqueue(new Callback<List<FormItemObject>>() {
             @Override
             public void onResponse(Call<List<FormItemObject>> call, Response<List<FormItemObject>> response) {
-                if(response.isSuccess()){
+                if(response.isSuccessful()){
                     int size= formPerPage>response.body().size()?formPerPage:response.body().size();
                     getView().addViewForm(response.body().subList(0, size));
                 }

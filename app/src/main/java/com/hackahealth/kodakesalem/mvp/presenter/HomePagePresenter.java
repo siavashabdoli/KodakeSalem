@@ -23,7 +23,8 @@ public class HomePagePresenter extends MvpBasePresenter<HomePageViewInterface> i
     @Override
     public void attachView(HomePageViewInterface view) {
         super.attachView(view);
-        getView().setUserName(appSharedPreference.getUserName());
+        String userNameText=appSharedPreference.getUserName();
+        getView().setUserName(userNameText);
     }
 
     @Override

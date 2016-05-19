@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <string-array name="day">
+        <item>فروردین</item>
+        <item>اردیبهشت</item>
+        <item>خرداد</item>
+        <item>تیر</item>
+        <item>مرداد</item>
+        <item>شهریور</item>
+        <item>مهر</item>
+        <item>آبان</item>
+        <item>آذر</item>
+        <item>دی</item>
+        <item>بهمن</item>
+        <item>اسفند</item>
+    </string-array>
+
+    <string-array name="delivery">
+        <item>نوع زایمان ؟</item>
+        <item>طبیعی</item>
+        <item>سزارین</item>
+        <item>چند قلو</item>
+        <item>ترم</item>
+        <item>نارس</item>
+    </string-array>
+
+    <string-array name="place">
+        <item>محل تولد ؟</item>
+        <item>بیمارستان</item>
+        <item>تسهیلات زایمانی</item>
+        <item>منزل</item>
+    </string-array>
+
+    <string-array name="aid">
+        <item>کمک کننده زایمان ؟</item>
+        <item>پزشک</item>
+        <item>ماما</item>
+        <item>م م د د</item>
+        <item>م م د ن</item>
+    </string-array>
+
+</resources>

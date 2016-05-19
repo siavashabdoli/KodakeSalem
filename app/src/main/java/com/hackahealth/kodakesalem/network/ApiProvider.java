@@ -7,6 +7,7 @@ import com.hackahealth.kodakesalem.util.ServerConfig;
 
 import java.io.IOException;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 import okhttp3.Authenticator;
 import okhttp3.Interceptor;
@@ -14,49 +15,59 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.Route;
+import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 /**
  * Created by siavash on 5/18/16.
  */
+
 public class ApiProvider {
 
 
-    private APIService mTService;
+    private static APIService mTService;
     private Retrofit mRetrofitClient;
     private AppSharedPreference mAppPreferenceTools;
 
-    public ApiProvider(){
+    private ApiProvider(){
         this.mAppPreferenceTools = new AppSharedPreference(MyApp.applicationContext);
-        OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
+
         //add http interceptor to add headers to each request
-        httpClient.addInterceptor(new Interceptor() {
-            @Override
-            public Response intercept(Chain chain) throws IOException {
-                Request original = chain.request();
-                String originalPath = original.url().url().getPath();
+        HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
+        loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+        OkHttpClient httpClient = new OkHttpClient.Builder()
+                .addInterceptor(loggingInterceptor)
+                .connectTimeout(15, TimeUnit.SECONDS)
+                .readTimeout(15, TimeUnit.SECONDS)
+                .writeTimeout(15, TimeUnit.SECONDS)
+                .addInterceptor(new Interceptor() {
+                    @Override
+                    public Response intercept(Chain chain) throws IOException {
+                        Request original = chain.request();
+                        String originalPath = original.url().url().getPath();
 
-                    Request.Builder requestBuilder = original.newBuilder();
+                        Request.Builder requestBuilder = original.newBuilder();
 
-                    requestBuilder.addHeader("Accept", "application/json");
+                        requestBuilder.addHeader("Accept", "application/json");
 
-                    if (mAppPreferenceTools.isAuthorized()) {
-                        requestBuilder.addHeader("Authorization", mAppPreferenceTools.getAccessToken());
+                        if (mAppPreferenceTools.isAuthorized()) {
+                            requestBuilder.addHeader("Api-Token", mAppPreferenceTools.getAccessToken());
+                        }
+                        requestBuilder.method(original.method(), original.body());
+                        Request request = requestBuilder.build();
+                        return chain.proceed(request);
+
                     }
-                    requestBuilder.method(original.method(), original.body());
-                    Request request = requestBuilder.build();
-                    return chain.proceed(request);
-
-            }
-        });
+                })
+                .build();
 
         Gson gson = new GsonBuilder()
                 .create();
 
         mRetrofitClient = new Retrofit.Builder()
                 .baseUrl(ServerConfig.REST_API_BASE_URL) // set Base URL , should end with '/'
-                .client(httpClient.build()) // add http client
+                .client(httpClient) // add http client
                 .addConverterFactory(GsonConverterFactory.create(gson))//add gson converter
                 .build();
         mTService = mRetrofitClient.create(APIService.class);
@@ -66,7 +77,12 @@ public class ApiProvider {
      *
      * @return
      */
-    public APIService getTService() {
+    public static APIService getTService() {
+        if(mTService!=null)
+        return mTService;
+
+        new ApiProvider();
+
         return mTService;
     }
 
