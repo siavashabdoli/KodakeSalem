@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/check_list_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/checklist_row_style"
+        fontPath="@string/iran_sans_regular"
+        tools:ignore="MissingPrefix,RtlHardcoded" />
+
+<android.support.v7.widget.AppCompatSpinner
+    android:id="@+id/checklist_row_spinner"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+</android.support.v7.widget.AppCompatSpinner>
+    
+    <TextView
+        android:id="@+id/check_list_row_followdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+</LinearLayout>

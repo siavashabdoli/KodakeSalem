@@ -2,4 +2,15 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="checklist_row_title_size">12sp</dimen>
+    <dimen name="checklist_page_form_title_size">13sp</dimen>
+    <dimen name="form_page_padding">12dp</dimen>
+    <dimen name="button_submit_width">288dp</dimen>
+    <dimen name="button_submit_height">60dp</dimen>
+    <dimen name="submit_button_textsize">13sp</dimen>
+    <dimen name="logo_height_size">240dp</dimen>
+    <dimen name="activity_login_logosize">96dp</dimen>
+    <dimen name="login_appname_margintop">12dp</dimen>
+    <dimen name="login_appname_textsize">14sp</dimen>
+    <dimen name="login_textview_margin">24dp</dimen>
 </resources>

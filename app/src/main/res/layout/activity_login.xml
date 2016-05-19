@@ -1,0 +1,78 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@android:color/white"
+    android:id="@+id/test">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/logo_height_size"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:id="@+id/logo">
+
+        <ImageView
+            android:layout_width="@dimen/activity_login_logosize"
+            android:layout_height="@dimen/activity_login_logosize"
+            android:id="@+id/imageView" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/login_appname_margintop"
+            android:textSize="@dimen/login_appname_textsize"
+            android:textColor="@android:color/white"
+            android:text="@string/app_name" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo"
+        android:layout_marginTop="48dp"
+        android:layout_marginLeft="72dp"
+        android:layout_marginRight="72dp"
+        android:gravity="center"
+        android:orientation="vertical">
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/login_textview_margin">
+        <android.support.v7.widget.AppCompatEditText android:id="@+id/activity_login_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="@string/login_username" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_name2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/login_textview_margin">
+        <android.support.v7.widget.AppCompatEditTex android:id="@+id/activity_login_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:gravity="right"
+            android:hint="@string/activity_login_password" />
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:layout_width="@dimen/button_submit_width"
+            android:layout_height="@dimen/button_submit_height"
+            android:text="@string/login_button"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/submit_button_textsize"
+            android:layout_weight="1"
+            android:id="@+id/submit" />
+
+    </LinearLayout>
+
+</RelativeLayout>

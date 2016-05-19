@@ -1,6 +1,15 @@
 <resources>
+
+    <!-- font resource-->
+    <string name="iran_sans_regular">fonts/IRANSansMobile.ttf</string>
+    <string name="iran_sans_light">fonts/IRANSansMobile_Light.ttf</string>
+    <string name="iran_sans_bold">fonts/IRANSansMobile_Bold.ttf</string>
+    <string name="iran_sans_medium">fonts/IRANSansMobile_Medium.ttf</string>
     <string name="app_name">KodakeSalem</string>
     <string name="app_pref_access_token">accessToken</string>
     <string name="app_pref_user_id">UserID</string>
     <string name="app_pref_user_name">UserName</string>
+    <string name="login_username">نام کاربری</string>
+    <string name="login_password">رمز عبور</string>
+    <string name="login_button">ورود</string>
 </resources>
