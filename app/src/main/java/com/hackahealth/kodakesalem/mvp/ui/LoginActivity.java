@@ -6,11 +6,9 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatEditText;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.hackahealth.kodakesalem.R;
-import com.hackahealth.kodakesalem.SplashScreen;
 import com.hackahealth.kodakesalem.mvp.presenter.LoginPresenter;
 import com.hackahealth.kodakesalem.mvp.presenter.PresenterInterface.LoginPresenterInterface;
 import com.hackahealth.kodakesalem.mvp.ui.uiInterface.LoginViewInterface;

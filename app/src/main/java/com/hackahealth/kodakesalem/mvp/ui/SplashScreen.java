@@ -1,7 +1,9 @@
-package com.hackahealth.kodakesalem;
+package com.hackahealth.kodakesalem.mvp.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.hackahealth.kodakesalem.R;
 
 public class SplashScreen extends AppCompatActivity {
 
