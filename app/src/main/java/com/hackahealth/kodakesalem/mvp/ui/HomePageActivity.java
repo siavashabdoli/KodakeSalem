@@ -19,8 +19,8 @@ import butterknife.OnClick;
  */
 public class HomePageActivity extends MvpActivity<HomePageViewInterface,HomePagePresenterInterface> implements HomePageViewInterface {
 
-    @Bind(R.id.home_page_name)
-    TextView tvUserName;
+//    @Bind(R.id.home_page_name)
+//    TextView tvUserName;
 
     @NonNull
     @Override
@@ -29,8 +29,8 @@ public class HomePageActivity extends MvpActivity<HomePageViewInterface,HomePage
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.home_page);
 
     }
@@ -48,6 +48,6 @@ public class HomePageActivity extends MvpActivity<HomePageViewInterface,HomePage
 
     @Override
     public void setUserName(String userName) {
-        tvUserName.setText(userName);
+//        tvUserName.setText(userName);
     }
 }

@@ -67,6 +67,7 @@
             </FrameLayout>
 
             <android.support.v7.widget.CardView
+                android:id="@+id/home_page_createnew"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/homepage_cardview_height"
                 android:background="@android:color/white"
@@ -81,42 +82,79 @@
                     <ImageView
                         android:layout_width="@dimen/homepage_circle_diameter"
                         android:layout_height="@dimen/homepage_circle_diameter"
-                        style="@style/circle_homepage_style"
-
+                        android:layout_gravity="right|center_vertical"
+                        android:layout_marginRight="@dimen/home_circle_right_margin"
                         android:src="@drawable/circle_image_green"/>
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="right|center_vertical"
-                        android:layout_marginRight="18dp"
-                        android:src="@drawable/ic_person_add_white_36dp"/>
+                        android:layout_marginRight="@dimen/card_image_margin_right"
+                        android:src="@drawable/ic_person_add_white_24dp"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/home_page_name"
                         android:gravity="right|center_vertical"
                         android:layout_gravity="right|center_vertical"/>
                 </FrameLayout>
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
-                android:id="@+id/home_page_createnew"
+                android:id="@+id/home_page_revisit"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/homepage_cardview_height"
                 android:background="@android:color/white"
                 android:layout_margin="@dimen/homepage_cardview_margin">
                 <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
+                    android:layout_height="match_parent">
+                <ImageView
+                    android:layout_width="@dimen/homepage_circle_diameter"
+                    android:layout_height="@dimen/homepage_circle_diameter"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_marginRight="@dimen/home_circle_right_margin"
+                    android:src="@drawable/circle_image_blue"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_marginRight="@dimen/card_image_margin_right"
+                    android:src="@drawable/ic_folder_shared_white_24dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="right|center_vertical"
+                    android:layout_gravity="right|center_vertical"/>
+                </FrameLayout>
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-                android:id="@+id/home_page_revisit"
-            android:layout_height="@dimen/homepage_cardview_height"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/homepage_cardview_height"
+                android:visibility="gone"
                 android:background="@android:color/white"
                 android:layout_margin="@dimen/homepage_cardview_margin">
-
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:layout_width="@dimen/homepage_circle_diameter"
+                        android:layout_height="@dimen/homepage_circle_diameter"
+                        android:layout_gravity="right|center_vertical"
+                        android:layout_marginRight="@dimen/home_circle_right_margin"
+                        android:src="@drawable/circle_image_blue"/>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:layout_marginRight="@dimen/card_image_margin_right"
+                        android:src="@drawable/ic_folder_shared_white_24dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="right|center_vertical"
+                        android:layout_gravity="right|center_vertical"/>
+                </FrameLayout>
         </android.support.v7.widget.CardView>
         </LinearLayout>
 
