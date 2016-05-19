@@ -42,7 +42,7 @@ public class ApiProvider {
                     requestBuilder.addHeader("Accept", "application/json");
 
                     if (mAppPreferenceTools.isAuthorized()) {
-                        requestBuilder.addHeader("Authorization", "bearer " + mAppPreferenceTools.getAccessToken());
+                        requestBuilder.addHeader("Authorization", mAppPreferenceTools.getAccessToken());
                     }
                     requestBuilder.method(original.method(), original.body());
                     Request request = requestBuilder.build();

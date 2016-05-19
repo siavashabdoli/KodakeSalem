@@ -1,0 +1,188 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewChild"
+    android:background="@android:color/white"
+    android:padding="@dimen/form_page_padding"
+    android:id="@+id/new_child_newchild">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/new_child_scrollView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/form_page_padding">
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/new_child_child_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:gravity="right"
+                    android:hint="@string/child_name" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/newChild_marginInput">
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/new_child_child_family"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:gravity="right"
+                    android:hint="@string/child_lastname" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/newChild_marginInput">
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/new_child_child_national"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberSigned"
+                    android:gravity="left"
+                    android:hint="@string/child_national_id" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/child_birth_date"
+                android:layout_marginBottom="@dimen/newChild_marginInput" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/newChild_marginInput"
+                android:weightSum="3"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/new_child_year"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberSigned"
+                    android:gravity="center"
+                    android:hint="@string/year"
+                    android:layout_weight="1"/>
+
+                <android.support.v7.widget.AppCompatSpinner
+                    android:id="@+id/new_child_month"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:spinnerMode="dialog"
+                    android:entries="@array/day"
+                    android:layout_weight="1"/>
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/new_child_day"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberSigned"
+                    android:gravity="center"
+                    android:hint="@string/day"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/newChild_marginInput">
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/new_child_child_weight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:gravity="left"
+                    android:hint="@string/gram_vazn_tavalod" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/newChild_marginInput">
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/new_child_child_height"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:gravity="left"
+                    android:hint="@string/height_birth" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/newChild_marginInput">
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/new_child_child_head"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:gravity="left"
+                    android:hint="@string/dore_sar_cm" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/new_child_delivery"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dialog"
+                android:layout_marginBottom="@dimen/newChild_marginInput"
+                android:entries="@array/delivery"/>
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/new_child_place"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dialog"
+                android:layout_marginBottom="@dimen/newChild_marginInput"
+                android:entries="@array/place"/>
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/new_child_aid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dialog"
+                android:layout_marginBottom="@dimen/newChild_marginInput"
+                android:entries="@array/aid"/>
+
+            <android.support.v7.widget.AppCompatButton
+                android:layout_width="@dimen/button_submit_width"
+                android:layout_height="@dimen/button_submit_height"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:id="@+id/new_child_submit"
+                android:textColor="@android:color/white"
+                android:theme="@style/greenColorButton" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

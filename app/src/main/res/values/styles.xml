@@ -1,9 +1,9 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
@@ -13,7 +13,7 @@
         <item name="android:textSize">@dimen/checklist_row_title_size</item>
         <item name="android:textColor">@color/secondary_text</item>
     </style>
-    <style name="greenColorButton" parent="@style/ThemeOverlay.AppCompat.Dark">
+    <style name="greenColorButton" parent="@style/ThemeOverlay.AppCompat.Light">
 
         <item name="colorButtonNormal">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/secondary_text</item>

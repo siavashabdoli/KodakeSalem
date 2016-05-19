@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
     <android.support.v7.widget.Toolbar
@@ -11,8 +12,9 @@
         android:gravity="right"
         android:textSize="@dimen/checklist_page_form_title_size"
         android:textColor="@color/primary_text"
-        android:fontPath="@string/iran_sans_medium"
-        android:padding="@dimen/form_page_padding"/>
+        fontPath="@string/iran_sans_medium"
+        android:padding="@dimen/form_page_padding"
+        tools:ignore="MissingPrefix" />
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>

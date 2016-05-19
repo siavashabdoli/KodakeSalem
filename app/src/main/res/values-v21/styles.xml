@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-        <style name="greenColorButton" parent="@style/ThemeOverlay.AppCompat.Dark">
+        <style name="greenColorButton" parent="@style/ThemeOverlay.AppCompat.Light">
 
+                <item name="android:background">?android:selectableItemBackgroundBorderless</item>
                 <item name="colorButtonNormal">@color/colorPrimaryDark</item>
                 <item name="android:colorControlHighlight">@color/colorPrimaryDark</item>
                 <item name="android:colorPrimary">@color/secondary_text</item>

@@ -1,7 +1,11 @@
 package com.hackahealth.kodakesalem.mvp.presenter;
 
+import android.Manifest;
 import android.content.Context;
+import android.content.pm.PackageManager;
+import android.util.Log;
 
+import com.hackahealth.kodakesalem.R;
 import com.hackahealth.kodakesalem.mvp.objects.AuthenticationResponseObject;
 import com.hackahealth.kodakesalem.mvp.objects.UserLoginObject;
 import com.hackahealth.kodakesalem.mvp.presenter.PresenterInterface.LoginPresenterInterface;
@@ -11,9 +15,12 @@ import com.hackahealth.kodakesalem.network.ApiProvider;
 import com.hackahealth.kodakesalem.util.AppSharedPreference;
 import com.hannesdorfmann.mosby.mvp.MvpBasePresenter;
 
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import pub.devrel.easypermissions.AfterPermissionGranted;
+import pub.devrel.easypermissions.EasyPermissions;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -24,6 +31,7 @@ public class LoginPresenter extends MvpBasePresenter<LoginViewInterface> impleme
     private final Context context;
     APIService mService;
     private Call<AuthenticationResponseObject> call;
+    private UserLoginObject userLoginObject;
 
     public LoginPresenter(Context context){
         this.context=context;
@@ -38,6 +46,7 @@ public class LoginPresenter extends MvpBasePresenter<LoginViewInterface> impleme
     @Override
     public void detachView(boolean retainInstance) {
         super.detachView(retainInstance);
+        if(call!=null)
         call.cancel();
 
     }
@@ -46,24 +55,31 @@ public class LoginPresenter extends MvpBasePresenter<LoginViewInterface> impleme
 
     @Override
     public void login(String username, String password) {
-        UserLoginObject userLoginObject=new UserLoginObject(username,password);
-        call=mService.loginUser(userLoginObject);
+        userLoginObject = new UserLoginObject(username, password);
+
+            loginSend();
+
+
+    }
+    private void loginSend() {
+        call = mService.loginUser(userLoginObject);
         call.enqueue(new Callback<AuthenticationResponseObject>() {
             @Override
             public void onResponse(Call<AuthenticationResponseObject> call, Response<AuthenticationResponseObject> response) {
-                if(response.isSuccess()){
-                    AppSharedPreference appSharedPreference=new AppSharedPreference(context);
+                if (response.isSuccess()) {
+                    AppSharedPreference appSharedPreference = new AppSharedPreference(context);
                     appSharedPreference.saveUserAuthenticationInfo(response.body());
-                    getView().LoginSuccesfull();
+                    getView().LoginSuccessful();
+                } else {
+                    getView().LoginFailed();
                 }
             }
 
             @Override
             public void onFailure(Call<AuthenticationResponseObject> call, Throwable t) {
-                getView().LoginFailed();
+                Log.d("LoginPresenter","Unexpected Error: Retrofit failed to convert json");
             }
         });
-        getView().LoginSuccesfull();
     }
 
     public static boolean isEmailValid(String email) {
@@ -79,4 +95,7 @@ public class LoginPresenter extends MvpBasePresenter<LoginViewInterface> impleme
         }
         return isValid;
     }
+
+
+
 }

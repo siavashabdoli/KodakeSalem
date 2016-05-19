@@ -9,7 +9,21 @@
     <string name="app_pref_access_token">accessToken</string>
     <string name="app_pref_user_id">UserID</string>
     <string name="app_pref_user_name">UserName</string>
-    <string name="login_username">نام کاربری</string>
-    <string name="login_password">رمز عبور</string>
+    <string name="activity_login_username">نام کاربری</string>
+    <string name="activity_login_password">رمز عبور</string>
     <string name="login_button">ورود</string>
+    <string name="login_successful">ورود با موفقیت انجام شد</string>
+    <string name="cansel">انصراف</string>
+    <string name="app_need_permission">برنامه برای اجرا شدن نیاز به دسترسی به اینترنت دارد</string>
+    <string name="give_permission">دسترسی دادن</string>
+    <string name="login_failed">نام کاربری یا رمز عبور اشتباه است</string>
+    <string name="gram_vazn_tavalod">وزن هنگام تولد - گرم</string>
+    <string name="child_name">نام کودک</string>
+    <string name="child_lastname">نام خانوادگی کودک</string>
+    <string name="child_national_id">شماره ملی کودک</string>
+    <string name="child_birth_date">تاریخ تولد کودک</string>
+    <string name="year">سال</string>
+    <string name="day">روز</string>
+    <string name="height_birth">قد هنگام تولد - سانتی متر</string>
+    <string name="dore_sar_cm">دور سر هنگام تولد - سانتی متر</string>
 </resources>
