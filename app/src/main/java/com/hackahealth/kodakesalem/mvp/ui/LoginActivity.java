@@ -40,7 +40,7 @@ public class LoginActivity extends MvpActivity<LoginViewInterface, LoginPresente
     @NonNull
     @Override
     public LoginPresenterInterface createPresenter() {
-        return new LoginPresenter(LoginActivity.this);
+        return new LoginPresenter();
     }
 
     @Override

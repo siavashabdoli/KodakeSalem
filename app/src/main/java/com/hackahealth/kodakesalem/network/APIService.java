@@ -1,6 +1,7 @@
 package com.hackahealth.kodakesalem.network;
 
 import com.hackahealth.kodakesalem.mvp.objects.AuthenticationResponseObject;
+import com.hackahealth.kodakesalem.mvp.objects.ChildContact;
 import com.hackahealth.kodakesalem.mvp.objects.FormItemObject;
 import com.hackahealth.kodakesalem.mvp.objects.ResponseResultFormObject;
 import com.hackahealth.kodakesalem.mvp.objects.ResultFormItemObject;
@@ -27,4 +28,9 @@ public interface APIService {
     @POST("authentication/")
     Call<AuthenticationResponseObject> loginUser(@Body UserLoginObject userLoginObject);
 
+    @GET("child/list/")
+    Call<List<ChildContact>> getAllChildContact();
+
+    @GET("child/list/?q={queryTerm}")
+    Call<List<ChildContact>> queryChildContact(@Path("queryTerm")String queryTerm);
 }

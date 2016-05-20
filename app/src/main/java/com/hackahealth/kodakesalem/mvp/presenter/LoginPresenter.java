@@ -6,6 +6,7 @@ import android.content.pm.PackageManager;
 import android.util.Log;
 
 import com.google.gson.Gson;
+import com.hackahealth.kodakesalem.MyApp;
 import com.hackahealth.kodakesalem.R;
 import com.hackahealth.kodakesalem.mvp.objects.AuthenticationResponseObject;
 import com.hackahealth.kodakesalem.mvp.objects.UserLoginObject;
@@ -29,13 +30,11 @@ import retrofit2.Response;
 public class LoginPresenter extends MvpBasePresenter<LoginViewInterface> implements LoginPresenterInterface {
 
 
-    private final Context context;
     APIService mService;
     private Call<AuthenticationResponseObject> call;
     private UserLoginObject userLoginObject;
 
-    public LoginPresenter(Context context){
-        this.context=context;
+    public LoginPresenter(){
         mService=ApiProvider.getTService();
     }
     @Override
@@ -69,7 +68,7 @@ public class LoginPresenter extends MvpBasePresenter<LoginViewInterface> impleme
 
 
                 if (response.isSuccessful()) {
-                    AppSharedPreference appSharedPreference = new AppSharedPreference(context);
+                    AppSharedPreference appSharedPreference = new AppSharedPreference(MyApp.applicationContext);
                     appSharedPreference.saveUserAuthenticationInfo(response.body());
                     getView().LoginSuccessful();
                 } else {
