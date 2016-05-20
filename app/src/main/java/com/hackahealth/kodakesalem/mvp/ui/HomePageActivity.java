@@ -5,6 +5,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.NonNull;
+import android.util.Log;
 import android.view.Window;
 import android.widget.TextView;
 
@@ -15,6 +16,7 @@ import com.hackahealth.kodakesalem.mvp.ui.uiInterface.HomePageViewInterface;
 import com.hannesdorfmann.mosby.mvp.MvpActivity;
 
 import butterknife.Bind;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
@@ -36,6 +38,7 @@ public class HomePageActivity extends MvpActivity<HomePageViewInterface,HomePage
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_page);
+        ButterKnife.bind(this);
         Window window=getWindow();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             window.setStatusBarColor(getResources().getColor(R.color.blue_statusbar));
@@ -54,13 +57,15 @@ public class HomePageActivity extends MvpActivity<HomePageViewInterface,HomePage
     @OnClick(R.id.home_page_revisit)
     @Override
     public void startChildReVisit() {
-
+        startActivity(FragmentHolderActivity
+                .newInstance(HomePageActivity.this, FragmentHolderActivity.CONTACT_SELECT_FRAGMENT));
     }
 
     @OnClick(R.id.home_page_process)
     public void startProccessPage(){
+        Log.d("HomePageActivity","Process Clicked");
         startActivity(FragmentHolderActivity
-                .newInstance(HomePageActivity.this,FragmentHolderActivity.PROCESS_FRAGMENT));
+                .newInstance(HomePageActivity.this, FragmentHolderActivity.PROCESS_FRAGMENT));
     }
 
     @Override

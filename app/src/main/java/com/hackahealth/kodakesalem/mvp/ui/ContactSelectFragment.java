@@ -37,7 +37,6 @@ public class ContactSelectFragment extends MvpLceFragment<SwipeRefreshLayout,Lis
     public static ContactSelectFragment newInstanFragment(){
         ContactSelectFragment fragment=new ContactSelectFragment();
         Bundle args = new Bundle();
-//        args.putInt(CHILD_ID, param1);
         fragment.setArguments(args);
         return fragment;
     }
@@ -52,7 +51,7 @@ public class ContactSelectFragment extends MvpLceFragment<SwipeRefreshLayout,Lis
                 presenter.onItemSelected(position);
             }
         });
-        return super.onCreateView(inflater, container, savedInstanceState);
+        return rootview;
     }
 
 

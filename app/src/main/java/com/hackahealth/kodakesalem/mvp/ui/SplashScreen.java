@@ -19,7 +19,7 @@ public class SplashScreen extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         AppSharedPreference appSharedPreference=new AppSharedPreference(this);
-        if(appSharedPreference.getAccessToken()==null)
+        if(appSharedPreference.getAccessToken()==null || appSharedPreference.getAccessToken().equals(""))
             startActivity(new Intent(SplashScreen.this,LoginActivity.class));
         else
             startActivity(new Intent(SplashScreen.this,HomePageActivity.class));
