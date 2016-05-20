@@ -1,6 +1,7 @@
-package com.hackahealth.kodakesalem.mvp.presenter.PresenterInterface;
+package com.hackahealth.kodakesalem.mvp.presenter;
 
 import com.hackahealth.kodakesalem.mvp.objects.ChildContact;
+import com.hackahealth.kodakesalem.mvp.presenter.PresenterInterface.SelectContactPresenterInterface;
 import com.hackahealth.kodakesalem.mvp.ui.uiInterface.SelectContactViewInterface;
 import com.hackahealth.kodakesalem.network.APIService;
 import com.hackahealth.kodakesalem.network.ApiProvider;
