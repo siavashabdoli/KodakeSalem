@@ -19,51 +19,17 @@
 
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="206dp"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:background="@color/colorPrimary">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical|left"
-                    android:layout_marginLeft="20dp"
-                    android:orientation="vertical">
 
-                    <ImageView
-                        android:layout_width="170dp"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/main_image"/>
-
-                </LinearLayout>
-
-                <LinearLayout
+                <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginLeft="190dp"
-                    android:layout_gravity="right|center_vertical"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@android:color/white"
-                        android:gravity="right"
-                        android:textSize="16sp"
-                        android:text="@string/ta_dabestan" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:textColor="@android:color/white"
-                        android:gravity="right"
-                        android:textSize="9sp"
-                        android:text="@string/subtitle_moraghebat_kodak" />
-
-                </LinearLayout>
-
+                    android:layout_height="match_parent"
+                    android:src="@drawable/hero_top"
+                    android:adjustViewBounds="true"
+                    />
             </FrameLayout>
 
             <android.support.v7.widget.CardView
@@ -95,6 +61,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="right|center_vertical"
+                        android:layout_marginRight="@dimen/child_contact_text_marginright"
+                        android:textColor="@color/secondary_text"
+                        android:text="@string/new_file_create"
                         android:layout_gravity="right|center_vertical"/>
                 </FrameLayout>
             </android.support.v7.widget.CardView>
@@ -123,6 +92,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/child_contact_text_marginright"
+                    android:textColor="@color/secondary_text"
+                    android:text="@string/revisit"
                     android:gravity="right|center_vertical"
                     android:layout_gravity="right|center_vertical"/>
                 </FrameLayout>
@@ -131,28 +103,31 @@
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/homepage_cardview_height"
-                android:visibility="gone"
                 android:background="@android:color/white"
                 android:layout_margin="@dimen/homepage_cardview_margin">
                 <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:id="@+id/home_page_process">
                     <ImageView
                         android:layout_width="@dimen/homepage_circle_diameter"
                         android:layout_height="@dimen/homepage_circle_diameter"
                         android:layout_gravity="right|center_vertical"
                         android:layout_marginRight="@dimen/home_circle_right_margin"
-                        android:src="@drawable/circle_image_blue"/>
+                        android:src="@drawable/circle_image_orange"/>
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="right|center_vertical"
                         android:layout_marginRight="@dimen/card_image_margin_right"
-                        android:src="@drawable/ic_folder_shared_white_24dp"/>
+                        android:src="@drawable/ic_insert_chart_white_24dp"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="right|center_vertical"
+                        android:layout_marginRight="@dimen/child_contact_text_marginright"
+                        android:textColor="@color/secondary_text"
+                        android:text="@string/see_proccess"
                         android:layout_gravity="right|center_vertical"/>
                 </FrameLayout>
         </android.support.v7.widget.CardView>

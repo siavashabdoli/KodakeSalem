@@ -1,8 +1,11 @@
 package com.hackahealth.kodakesalem.mvp.ui;
 
+import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.NonNull;
+import android.view.Window;
 import android.widget.TextView;
 
 import com.hackahealth.kodakesalem.R;
@@ -13,6 +16,7 @@ import com.hannesdorfmann.mosby.mvp.MvpActivity;
 
 import butterknife.Bind;
 import butterknife.OnClick;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 /**
  * Created by siavash on 5/19/16.
@@ -32,7 +36,14 @@ public class HomePageActivity extends MvpActivity<HomePageViewInterface,HomePage
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_page);
-
+        Window window=getWindow();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            window.setStatusBarColor(getResources().getColor(R.color.blue_statusbar));
+        }
+    }
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
     @OnClick(R.id.home_page_createnew)
     @Override
@@ -44,6 +55,12 @@ public class HomePageActivity extends MvpActivity<HomePageViewInterface,HomePage
     @Override
     public void startChildReVisit() {
 
+    }
+
+    @OnClick(R.id.home_page_process)
+    public void startProccessPage(){
+        startActivity(FragmentHolderActivity
+                .newInstance(HomePageActivity.this,FragmentHolderActivity.PROCESS_FRAGMENT));
     }
 
     @Override

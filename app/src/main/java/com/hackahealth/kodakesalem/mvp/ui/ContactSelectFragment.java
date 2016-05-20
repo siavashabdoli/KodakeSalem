@@ -34,10 +34,10 @@ public class ContactSelectFragment extends MvpLceFragment<SwipeRefreshLayout,Lis
     RecyclerView recyclerView;
 
 
-    public static ContactSelectFragment newInstanFragment(int param1){
+    public static ContactSelectFragment newInstanFragment(){
         ContactSelectFragment fragment=new ContactSelectFragment();
         Bundle args = new Bundle();
-        args.putInt(CHILD_ID, param1);
+//        args.putInt(CHILD_ID, param1);
         fragment.setArguments(args);
         return fragment;
     }

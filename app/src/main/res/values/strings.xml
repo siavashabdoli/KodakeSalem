@@ -5,7 +5,7 @@
     <string name="iran_sans_light">fonts/IRANSansMobile_Light.ttf</string>
     <string name="iran_sans_bold">fonts/IRANSansMobile_Bold.ttf</string>
     <string name="iran_sans_medium">fonts/IRANSansMobile_Medium.ttf</string>
-    <string name="app_name">KodakeSalem</string>
+    <string name="app_name">تا دبستان</string>
     <string name="app_pref_access_token">accessToken</string>
     <string name="app_pref_user_id">UserID</string>
     <string name="app_pref_user_name">UserName</string>
@@ -29,4 +29,7 @@
     <string name="ta_dabestan">تا دبستان</string>
     <string name="subtitle_moraghebat_kodak">مراقب سلامت کودک تا ۷ سالگی</string>
     <string name="error_try_again">خطا در گرفتن اطلاعات! دوباره تلاش کنید</string>
+    <string name="new_file_create">ایجاد پرونده جدید</string>
+    <string name="revisit">مراجعه مجدد</string>
+    <string name="see_proccess">مشاهده روندها</string>
 </resources>

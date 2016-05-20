@@ -11,30 +11,54 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-    <LinearLayout
-        android:id="@+id/logo"
-        android:layout_width="fill_parent"
-        android:layout_height="@dimen/logo_height_size"
-        android:layout_alignParentTop="true"
-        android:background="@color/colorPrimary"
-        android:gravity="center"
-        android:orientation="vertical">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="206dp"
+                android:orientation="horizontal"
+                android:background="@color/colorPrimary">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="@dimen/activity_login_logosize"
-            android:layout_height="@dimen/activity_login_logosize"
-            android:src="@mipmap/ic_launcher"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|left"
+                    android:layout_marginLeft="20dp"
+                    android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/login_appname_margintop"
-            android:text="@string/app_name"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/login_appname_textsize" />
+                    <ImageView
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/main_image"/>
 
-    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="190dp"
+                    android:layout_gravity="right|center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/white"
+                        android:gravity="right"
+                        android:textSize="16sp"
+                        android:text="@string/ta_dabestan" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:textColor="@android:color/white"
+                        android:gravity="right"
+                        android:textSize="9sp"
+                        android:text="@string/subtitle_moraghebat_kodak" />
+
+                </LinearLayout>
+
+            </FrameLayout>
 
     <LinearLayout
         android:layout_width="fill_parent"

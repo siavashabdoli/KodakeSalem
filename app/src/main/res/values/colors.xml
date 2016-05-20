@@ -9,7 +9,7 @@
     <color name="icons">#212121</color>
     <color name="divider">#B6B6B6</color>
     <color name="background">#F2F2F2</color>
-
+    <color name="blue_statusbar">#b4e2fb</color>
 
     <!-- circle color-->
     <color name="circle_green">#7CB342</color>

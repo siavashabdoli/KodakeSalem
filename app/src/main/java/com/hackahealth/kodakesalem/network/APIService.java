@@ -31,6 +31,6 @@ public interface APIService {
     @GET("child/list/")
     Call<List<ChildContact>> getAllChildContact();
 
-    @GET("child/list/?q={queryTerm}")
+    @GET("child/list/{queryTerm}")
     Call<List<ChildContact>> queryChildContact(@Path("queryTerm")String queryTerm);
 }
