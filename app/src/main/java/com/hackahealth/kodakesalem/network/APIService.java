@@ -25,7 +25,7 @@ public interface APIService {
     Call<List<FormItemObject>> getFormById(@Path("id") String questionId);
 
     @POST("checklist/child/{childId}/day/{dayId}")
-    Call<ResponseResultFormObject> sendProject(@Path("childIdTested") String childId,@Path("dayId") String CheckListId,@Body List<ResultFormItemObject> resultFormObjects);
+    Call<ResponseResultFormObject> sendProject(@Path("childId") String childId,@Path("dayId") String CheckListId,@Body List<ResultFormItemObject> resultFormObjects);
 
     @POST("authentication/")
     Call<AuthenticationResponseObject> loginUser(@Body UserLoginObject userLoginObject);
@@ -37,7 +37,7 @@ public interface APIService {
     Call<List<ChildContact>> queryChildContact(@Path("queryTerm")String queryTerm);
 
     @GET("doctor/list")
-    Call<List<Objects>> getDoctors(@Path("tested") int doctorId);
+    Call<List<Objects>> getDoctors();
 
     @PUT("doctor/list")
     Call<List<Objects>> getDoctorById(@Path("tested") int doctorId);
