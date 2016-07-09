@@ -14,6 +14,7 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 /**
@@ -37,4 +38,7 @@ public interface APIService {
 
     @GET("doctor/list")
     Call<List<Objects>> getDoctors(@Path("tested") int doctorId);
+
+    @PUT("doctor/list")
+    Call<List<Objects>> getDoctorById(@Path("tested") int doctorId);
 }

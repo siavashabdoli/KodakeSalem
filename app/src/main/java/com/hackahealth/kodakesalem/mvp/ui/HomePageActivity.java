@@ -72,5 +72,6 @@ public class HomePageActivity extends MvpActivity<HomePageViewInterface,HomePage
     @Override
     public void setUserName(String userName) {
 //        tvUserName.setText(userName);
+        Log.d("test","only for testing");
     }
 }
