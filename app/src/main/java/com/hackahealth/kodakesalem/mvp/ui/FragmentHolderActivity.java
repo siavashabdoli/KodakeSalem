@@ -88,7 +88,7 @@ public class FragmentHolderActivity extends MvpActivity<FragmentContainerViewInt
                 fragmentTransaction.replace(R.id.container,ContactSelectFragment.newInstanFragment()).commit();
                 break;
             case CONTACT_NEW_CHILD:
-//                fragmentTransaction
+                startActivity(new Intent(FragmentHolderActivity.this,NewChildActivity.class));
                 break;
             case CHECKLIST_FRAGMENT:
                 fragmentTransaction.replace(R.id.container,new CheckListFragment());

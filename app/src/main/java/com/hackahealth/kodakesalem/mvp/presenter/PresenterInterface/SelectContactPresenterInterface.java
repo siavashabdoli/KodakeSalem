@@ -8,6 +8,6 @@ import com.hannesdorfmann.mosby.mvp.MvpPresenter;
  */
 public interface SelectContactPresenterInterface extends MvpPresenter<SelectContactViewInterface> {
     void onItemSelected(int index);
-    void onSearchClicked(String query);
+    void onSearchClicked(String query,boolean pullToRefresh);
     public void loadCountries(final boolean pullToRefresh);
 }

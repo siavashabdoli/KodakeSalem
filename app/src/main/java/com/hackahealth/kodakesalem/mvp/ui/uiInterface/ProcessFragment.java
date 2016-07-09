@@ -30,7 +30,7 @@ public class ProcessFragment extends Fragment {
 
         View v=inflater.inflate(R.layout.fragment_form, container, false);
         ButterKnife.bind(this,v);
-        formView.loadUrl(ServerConfig.REST_API_BASE_URL+ServerConfig.PROCESS_API_URL);
+        formView.loadUrl(ServerConfig.REST_API_BASE_URL+ServerConfig.CHECKLIST_API_URL);
 
         // Enable Javascript
 

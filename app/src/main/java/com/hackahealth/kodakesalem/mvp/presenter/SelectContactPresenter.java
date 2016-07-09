@@ -39,7 +39,7 @@ public class SelectContactPresenter extends MvpBasePresenter<SelectContactViewIn
     }
 
     @Override
-    public void onSearchClicked(String query) {
+    public void onSearchClicked(String query,boolean pullToRefresh) {
         if(contactGetCall!=null&& !contactGetCall.isCanceled())
             contactGetCall.cancel();
 
@@ -50,20 +50,23 @@ public class SelectContactPresenter extends MvpBasePresenter<SelectContactViewIn
         contactGetCall.enqueue(new Callback<List<ChildContact>>() {
             @Override
             public void onResponse(Call<List<ChildContact>> call, Response<List<ChildContact>> response) {
+                getView().hideLoading();
                 if (response.isSuccessful()) {
-                    getView().setData(response.body());
+                    getView().showContent();
                 }
             }
 
             @Override
             public void onFailure(Call<List<ChildContact>> call, Throwable t) {
-
+                getView().showError(t, false);
             }
         });
+
+        getView().showLoading(false);
     }
 
     @Override
     public void loadCountries(boolean pullToRefresh) {
-        onSearchClicked("");
+        onSearchClicked("",pullToRefresh);
     }
 }

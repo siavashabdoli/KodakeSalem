@@ -1,6 +1,7 @@
 package com.hackahealth.kodakesalem.mvp.ui;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.PersistableBundle;
@@ -51,7 +52,7 @@ public class HomePageActivity extends MvpActivity<HomePageViewInterface,HomePage
     @OnClick(R.id.home_page_createnew)
     @Override
     public void startNewChildCreate() {
-
+        startActivity(new Intent(HomePageActivity.this,NewChildActivity.class));
     }
 
     @OnClick(R.id.home_page_revisit)

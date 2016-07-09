@@ -21,4 +21,5 @@
     <dimen name="home_circle_right_margin">12dp</dimen>
     <dimen name="card_image_margin_right">24dp</dimen>
     <dimen name="child_contact_text_marginright">72dp</dimen>
+    <dimen name="back_btn_padding">12dp</dimen>
 </resources>

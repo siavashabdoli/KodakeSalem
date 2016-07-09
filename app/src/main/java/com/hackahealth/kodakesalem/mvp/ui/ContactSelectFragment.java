@@ -3,6 +3,7 @@ package com.hackahealth.kodakesalem.mvp.ui;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,7 +26,8 @@ import butterknife.ButterKnife;
 /**
  * Created by siavash on 5/20/16.
  */
-public class ContactSelectFragment extends MvpLceFragment<SwipeRefreshLayout,List<ChildContact>,SelectContactViewInterface,SelectContactPresenterInterface> implements  SelectContactViewInterface{
+public class ContactSelectFragment extends MvpLceFragment<SwipeRefreshLayout,List<ChildContact>,SelectContactViewInterface,SelectContactPresenterInterface>
+        implements  SelectContactViewInterface,SwipeRefreshLayout.OnRefreshListener{
 
     private static final String CHILD_ID = "childID";
     private ChildContactAdapter childContactAdapter;
@@ -51,6 +53,10 @@ public class ContactSelectFragment extends MvpLceFragment<SwipeRefreshLayout,Lis
                 presenter.onItemSelected(position);
             }
         });
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.setAdapter(childContactAdapter);
+        loadData(false);
         return rootview;
     }
 
@@ -62,7 +68,7 @@ public class ContactSelectFragment extends MvpLceFragment<SwipeRefreshLayout,Lis
 
     @Override
     public void setData(List<ChildContact> childContacts) {
-
+        childContactAdapter.addData(childContacts);
     }
 
     @Override
@@ -94,6 +100,12 @@ public class ContactSelectFragment extends MvpLceFragment<SwipeRefreshLayout,Lis
     protected String getErrorMessage(Throwable e, boolean pullToRefresh) {
         return getActivity().getString(R.string.error_try_again);
     }
+
+    @Override
+    public void onRefresh() {
+        loadData(true);
+    }
+
     public interface CallbackClass{
         public void onItemClick(int position);
     }
