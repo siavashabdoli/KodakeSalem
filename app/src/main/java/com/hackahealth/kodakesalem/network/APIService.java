@@ -8,6 +8,7 @@ import com.hackahealth.kodakesalem.mvp.objects.ResultFormItemObject;
 import com.hackahealth.kodakesalem.mvp.objects.UserLoginObject;
 
 import java.util.List;
+import java.util.Objects;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -33,4 +34,7 @@ public interface APIService {
 
     @GET("child/list/{queryTerm}")
     Call<List<ChildContact>> queryChildContact(@Path("queryTerm")String queryTerm);
+
+    @GET("doctor/list")
+    Call<List<Objects>> getDoctors(@Path("tested") int doctorId);
 }
