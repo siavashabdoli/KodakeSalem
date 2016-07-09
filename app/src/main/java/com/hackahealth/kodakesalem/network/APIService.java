@@ -14,6 +14,7 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 /**
@@ -24,7 +25,7 @@ public interface APIService {
     Call<List<FormItemObject>> getFormById(@Path("id") String questionId);
 
     @POST("checklist/child/{childId}/day/{dayId}")
-    Call<ResponseResultFormObject> sendProject(@Path("childIdTested") String childId,@Path("dayId") String CheckListId,@Body List<ResultFormItemObject> resultFormObjects);
+    Call<ResponseResultFormObject> sendProject(@Path("childId") String childId,@Path("dayId") String CheckListId,@Body List<ResultFormItemObject> resultFormObjects);
 
     @POST("authentication/")
     Call<AuthenticationResponseObject> loginUser(@Body UserLoginObject userLoginObject);
