@@ -19,6 +19,7 @@ public class SplashScreen extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        Log.d("test","master test");
         AppSharedPreference appSharedPreference=new AppSharedPreference(this);
         Log.d("SplashScreen","Token:"+appSharedPreference.isAuthorized());
 //        if(appSharedPreference.getAccessToken()==null || appSharedPreference.getAccessToken().equals(""))

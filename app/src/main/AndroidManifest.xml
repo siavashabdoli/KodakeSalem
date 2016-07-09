@@ -11,7 +11,8 @@
         android:supportsRtl="true"
         android:name=".MyApp"
         android:theme="@style/AppTheme">
-        <activity android:name=".mvp.ui.SplashScreen">
+        <activity android:name=".mvp.ui.SplashScreen"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
