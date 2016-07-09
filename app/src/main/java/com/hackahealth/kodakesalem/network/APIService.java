@@ -37,4 +37,7 @@ public interface APIService {
 
     @GET("doctor/list")
     Call<List<Objects>> getDoctors();
+
+    @PUT("doctor/list")
+    Call<List<Objects>> getDoctorById(@Path("tested") int doctorId);
 }
